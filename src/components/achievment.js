@@ -18,7 +18,7 @@ export default function AchievementsSection() {
       <h2 className="text-2xl md:text-3xl font-semibold text-[#71F45D] mb-8">
         Achievements
       </h2>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 place-items-center">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 place-items-center">
         {achievements.map((src, index) => (
           <motion.div
             key={index}
