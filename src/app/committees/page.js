@@ -1,6 +1,6 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import teamData from "@/components/teamData";
+import teamData from "@/app/data/teamData";
 import TeamSection from "@/components/TeamSection";
 
 export default function CommitteesPage() {
