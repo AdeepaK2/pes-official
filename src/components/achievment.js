@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -17,9 +18,14 @@ export default function AchievementsSection() {
   const firstRow = achievements.slice(0, 3);
   const secondRow = achievements.slice(3);
 
+  const awardVariants = {
+    initial: { scale: 1, boxShadow: "0px 0px 0px rgba(113,244,93,0)" },
+    hover: { scale: 1.07, boxShadow: "0px 0px 15px 5px rgba(113,244,93,0.8)" },
+  };
+
   return (
-    <section className="py-10 px-6 md:px-20 bg-gray-900 text-white text-center">
-      <h2 className="text-2xl md:text-3xl font-semibold text-[#71F45D] mb-8">
+    <section className="py-10 px-6 md:px-20 bg-white text-black text-center">
+      <h2 className="text-2xl md:text-3xl font-semibold text-black mb-8">
         Achievements
       </h2>
 
@@ -28,8 +34,11 @@ export default function AchievementsSection() {
         {achievements.map((src, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.07 }}
-            className="relative cursor-pointer transition-transform duration-300 w-full max-w-lg mx-auto aspect-square"
+            initial="initial"
+            whileHover="hover"
+            variants={awardVariants}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="relative cursor-pointer w-full max-w-lg mx-auto aspect-square"
           >
             <Image
               src={src}
@@ -47,8 +56,11 @@ export default function AchievementsSection() {
           {firstRow.map((src, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.07 }}
-              className="relative cursor-pointer transition-transform duration-300 w-48 h-48"
+              initial="initial"
+              whileHover="hover"
+              variants={awardVariants}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="relative cursor-pointer w-64 h-64"
             >
               <Image
                 src={src}
@@ -63,8 +75,11 @@ export default function AchievementsSection() {
           {secondRow.map((src, index) => (
             <motion.div
               key={index + 3}
-              whileHover={{ scale: 1.07 }}
-              className="relative cursor-pointer transition-transform duration-300 w-48 h-48"
+              initial="initial"
+              whileHover="hover"
+              variants={awardVariants}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="relative cursor-pointer w-64 h-64"
             >
               <Image
                 src={src}
