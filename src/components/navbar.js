@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,17 +17,21 @@ export default function Navbar() {
     { name: "Committees", href: "/committee" },
     { name: "News", href: "/news" },
     { name: "Projects", href: "/events" },
-    {name:"Contact Us",href:"/contact"}
+    { name: "Contact Us", href: "/contact" }
   ];
 
   return (
-    <nav className="bg-gray-900 shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/">
-          <span className="text-2xl font-bold text-white cursor-pointer">
-            IEEE PES
-          </span>
+          <Image
+            src="/Logo.png"
+            alt="Logo"
+            width={150}
+            height={50}
+            className="cursor-pointer"
+          />
         </Link>
 
         {/* Desktop Menu */}
@@ -37,7 +42,7 @@ export default function Navbar() {
                 className={`${
                   pathname === item.href
                     ? "text-[#71F45D] italic"
-                    : "text-gray-300"
+                    : "text-gray-600"
                 } hover:text-[#71F45D] transition duration-300 cursor-pointer`}
               >
                 {item.name}
@@ -48,7 +53,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-gray-900"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <Menu size={28} />
@@ -57,14 +62,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-gray-900 shadow-md">
+        <div className="md:hidden bg-white shadow-md">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href}>
               <span
                 className={`block px-6 py-3 ${
                   pathname === item.href
                     ? "text-[#71F45D] italic"
-                    : "text-gray-300"
+                    : "text-gray-600"
                 } hover:text-[#71F45D] transition duration-300 cursor-pointer`}
               >
                 {item.name}
