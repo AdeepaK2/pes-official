@@ -14,7 +14,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "IEEE PES Volunteer of the Year!", href: "/volunteer_of_the_year" },
     { name: "About", href: "/about" },
-    { name: "Committees", href: "/committee" },
+    { name: "Committees", href: "/committees" },
     { name: "News", href: "/news" },
     { name: "Projects", href: "/events" },
     { name: "Contact Us", href: "/contact" }
