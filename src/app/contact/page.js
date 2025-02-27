@@ -10,7 +10,9 @@ import Footer from "@/components/footer";
 export default function ContactUs() {
     const [message, setMessage] = useState("");
     
-    const scriptURL = process.env.URL;
+    
+    const scriptURL = process.env.NEXT_PUBLIC_URL;
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
