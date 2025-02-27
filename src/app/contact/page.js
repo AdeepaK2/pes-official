@@ -11,7 +11,7 @@ export default function ContactUs() {
     const [message, setMessage] = useState("");
     
     
-    const scriptURL = process.env.NEXT_PUBLIC_URL;
+    const scriptURL ="https://script.google.com/macros/s/AKfycbzbxUyb1mCKSctNZadBlEHYGkZmv1LxlMml7gjQh_K-9etccADifpvFYRZRa1ag9W3w8g/exec";
 
 
     const handleSubmit = async (event) => {
