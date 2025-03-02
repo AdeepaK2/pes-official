@@ -53,7 +53,7 @@ export default function ContactUs() {
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">Contact Us</h2>
                         <p className="text-gray-700 mb-4">
-                            Get in touch with IEEE PES Student Branch Chapter of University of Moratuwa.
+                            Get in touch with IEEE PES Student Branch Chapter of University of Moratuwa. We are here to assist you with any queries or information you need. Feel free to reach out to us through the following contact details:
                         </p>
 
                         {/* Email */}
