@@ -1,4 +1,3 @@
-// eventsData.js (Located in app/data)
 export const eventsData = [
   {
     id: 1,
