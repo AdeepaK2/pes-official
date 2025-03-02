@@ -20,7 +20,7 @@ const TeamSection = ({ title, members }) => {
       {/* Header */}
       <div
         className="py-2 text-center text-3xl font-bold"
-        style={{ color: "#96FF86", fontFamily: "Amenti Bold" }}
+        style={{ color: "#FFFFFF", fontFamily: "Amenti Bold" }}
       >
         {title}
       </div>

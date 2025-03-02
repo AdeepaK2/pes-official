@@ -1,4 +1,15 @@
-const teamData = [
+export const advisor = {
+  name: "Mrs. K.A.T. Lasagani",
+  image: "members/advisor.jpg",
+  title: "Senior Lecturer Gr. II",
+  department: "Department of Electrical Engineering",
+  university: "University of Moratuwa",
+  qualifications: "B.Sc (Moratuwa), M.Eng. (Canada), P.Eng. (ON, Canada)",
+  description:
+    "Senior Lecturer Gr. II at the Department of Electrical Engineering, University of Moratuwa. Experienced in academic research and engineering applications.",
+};
+
+export const teamData = [
   {
     category: "Executive Committee",
     members: [
@@ -63,12 +74,13 @@ const teamData = [
         image: "members/dinithi raveesha.jpg",
         linkedin: "https://www.linkedin.com/in/dinithi-ravisha-63a11a259/",
       },
-      // {
-      //   name: "Avishka Rajapaksha",
-      //   role: "Member",
-      //   image: "members/avishka rajapaksha.jpg",
-      //   linkedin: "http://www.linkedin.com/in/avishka-rajapaksha-003892219",
-      // },
+      {
+        name: "Pubudu Nadeeja",
+        role: "Member",
+        image: "members/Pubudu Nadeeja.jpg",
+        linkedin:
+          "https://www.linkedin.com/in/pubudu-darshana-98a9b8343?trk=contact-info",
+      },
     ],
   },
   {
@@ -198,4 +210,4 @@ const teamData = [
   },
 ];
 
-export default teamData;
+// export default teamData;
