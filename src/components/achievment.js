@@ -20,12 +20,12 @@ export default function AchievementsSection() {
 
   const awardVariants = {
     initial: { scale: 1, boxShadow: "0px 0px 0px rgba(113,244,93,0)" },
-    hover: { scale: 1.07, boxShadow: "0px 0px 15px 5px rgba(113,244,93,0.8)" },
+    hover: { scale: 1.07, boxShadow: "0px 0px 20px 5px rgba(113,244,93,0.8)" },
   };
 
   return (
-    <section className="py-10 px-6 md:px-20 bg-white text-black text-center">
-      <h2 className="text-2xl md:text-3xl font-semibold text-black mb-8">
+    <section className="py-10 px-6 md:px-20 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white text-center mb-0 pb-0">
+      <h2 className="text-2xl md:text-3xl font-semibold text-[#71F45D] mb-8">
         Achievements
       </h2>
 
@@ -38,13 +38,13 @@ export default function AchievementsSection() {
             whileHover="hover"
             variants={awardVariants}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="relative cursor-pointer w-full max-w-lg mx-auto aspect-square"
+            className="relative cursor-pointer w-full max-w-lg mx-auto aspect-square bg-gray-800 rounded-lg"
           >
             <Image
               src={src}
               alt={`Award ${index + 1}`}
               fill
-              className="object-contain"
+              className="object-contain rounded-lg"
             />
           </motion.div>
         ))}
@@ -60,13 +60,13 @@ export default function AchievementsSection() {
               whileHover="hover"
               variants={awardVariants}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="relative cursor-pointer w-64 h-64"
+              className="relative cursor-pointer w-64 h-64 bg-gray-800 rounded-lg"
             >
               <Image
                 src={src}
                 alt={`Award ${index + 1}`}
                 fill
-                className="object-contain"
+                className="object-contain rounded-lg"
               />
             </motion.div>
           ))}
@@ -79,13 +79,13 @@ export default function AchievementsSection() {
               whileHover="hover"
               variants={awardVariants}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="relative cursor-pointer w-64 h-64"
+              className="relative cursor-pointer w-64 h-64 bg-gray-800 rounded-lg"
             >
               <Image
                 src={src}
                 alt={`Award ${index + 4}`}
                 fill
-                className="object-contain"
+                className="object-contain rounded-lg"
               />
             </motion.div>
           ))}

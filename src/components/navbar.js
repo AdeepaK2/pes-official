@@ -15,13 +15,13 @@ export default function Navbar() {
     { name: "IEEE PES Volunteer of the Year!", href: "/volunteer_of_the_year" },
     { name: "About", href: "/about" },
     { name: "Committees", href: "/committees" },
-    { name: "News", href: "/news" },
+    //{ name: "News", href: "/news" },
     { name: "Projects", href: "/events" },
     { name: "Contact Us", href: "/contact" }
   ];
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-green-700 shadow-lg fixed w-full top-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/">
@@ -41,9 +41,9 @@ export default function Navbar() {
               <span
                 className={`${
                   pathname === item.href
-                    ? "text-[#71F45D] italic"
-                    : "text-gray-600"
-                } hover:text-[#71F45D] transition duration-300 cursor-pointer`}
+                    ? "text-white italic"
+                    : "text-white opacity-80"
+                } hover:opacity-100 transition duration-300 cursor-pointer`}
               >
                 {item.name}
               </span>
@@ -53,7 +53,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-900"
+          className="md:hidden text-white"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <Menu size={28} />
@@ -62,15 +62,15 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-md">
+        <div className="md:hidden bg-green-700 shadow-md">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href}>
               <span
                 className={`block px-6 py-3 ${
                   pathname === item.href
-                    ? "text-[#71F45D] italic"
-                    : "text-gray-600"
-                } hover:text-[#71F45D] transition duration-300 cursor-pointer`}
+                    ? "text-white italic"
+                    : "text-white opacity-80"
+                } hover:opacity-100 transition duration-300 cursor-pointer`}
               >
                 {item.name}
               </span>
