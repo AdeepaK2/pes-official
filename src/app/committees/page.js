@@ -1,14 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import { teamData } from "@/app/data/teamData";
-import { advisor } from "@/app/data/teamData";
+import { teamData, advisor } from "@/app/data/teamData";
 import TeamSection from "@/components/TeamSection";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 export default function CommitteesPage() {
+  // Prevent horizontal scrolling
+  useEffect(() => {
+    document.body.style.overflowX = "hidden";
+    return () => {
+      document.body.style.overflowX = "auto"; // Reset on unmount
+    };
+  }, []);
+
   // State to control visibility of the About section
   const [showAbout, setShowAbout] = useState(false);
 
@@ -18,7 +25,7 @@ export default function CommitteesPage() {
   };
 
   return (
-    <>
+    <div className="overflow-x-hidden bg-gray-900 min-h-screen">
       <Navbar />
       <div className="p-6 md:p-12 bg-white min-h-screen flex flex-col items-center">
         {/* Advisor Section */}
@@ -38,7 +45,7 @@ export default function CommitteesPage() {
             <h3 className="text-gray-800 text-2xl font-semibold mt-2">
               {advisor.name}
             </h3>
-            
+
             <h4 className="text-green-600 font-bold mt-4">
               <button
                 className="text-green-600 hover:text-green-800"
@@ -76,6 +83,6 @@ export default function CommitteesPage() {
         ))}
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
