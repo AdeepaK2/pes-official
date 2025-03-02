@@ -19,6 +19,15 @@ export default function Navbar() {
     { name: "Contact Us", href: "/contact" },
   ];
 
+  // Disable scrolling when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden"; // Prevent scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
+  }, [menuOpen]);
+
   // Close menu when clicking outside
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -70,7 +79,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu - Slide In from Right */}
+      {/* Mobile Menu - Fixed & No Scrolling */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-green-800 shadow-lg transition-transform duration-300 ease-in-out mobile-menu ${
           menuOpen ? "translate-x-0" : "translate-x-full"
