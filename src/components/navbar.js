@@ -61,11 +61,8 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white menu-btn"
-          onClick={(e) => {
-            e.stopPropagation(); // Prevent event bubbling
-            setMenuOpen(!menuOpen);
-          }}
+          className="md:hidden text-white z-50"
+          onClick={() => setMenuOpen((prev) => !prev)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -73,13 +70,12 @@ export default function Navbar() {
 
       {/* Mobile Menu - Slide In from Right */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-green-800 shadow-lg transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-64 bg-green-800 shadow-lg transition-transform duration-300 ease-in-out z-50 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the menu
       >
         <button
-          className="absolute top-4 right-4 text-white"
+          className="absolute top-4 right-4 text-white z-50"
           onClick={() => setMenuOpen(false)}
         >
           <X size={28} />
@@ -101,10 +97,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Close menu when clicking outside */}
+      {/* Click outside menu to close */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40"
           onClick={() => setMenuOpen(false)}
         />
       )}
