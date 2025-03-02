@@ -63,12 +63,12 @@ const teamData = [
         image: "members/dinithi raveesha.jpg",
         linkedin: "https://www.linkedin.com/in/dinithi-ravisha-63a11a259/",
       },
-      {
-        name: "Avishka Rajapaksha",
-        role: "Member",
-        image: "members/avishka rajapaksha.jpg",
-        linkedin: "http://www.linkedin.com/in/avishka-rajapaksha-003892219",
-      },
+      // {
+      //   name: "Avishka Rajapaksha",
+      //   role: "Member",
+      //   image: "members/avishka rajapaksha.jpg",
+      //   linkedin: "http://www.linkedin.com/in/avishka-rajapaksha-003892219",
+      // },
     ],
   },
   {
@@ -112,12 +112,12 @@ const teamData = [
   {
     category: "Editorial Committee",
     members: [
-      {
-        name: "Sandaru Dias",
-        role: "Member",
-        image: "members/Sandaru Dias.png",
-        linkedin: "https://www.linkedin.com/in/sandaru-dias-32a0b5227/",
-      },
+      // {
+      //   name: "Sandaru Dias",
+      //   role: "Member",
+      //   image: "members/Sandaru Dias.png",
+      //   linkedin: "https://www.linkedin.com/in/sandaru-dias-32a0b5227/",
+      // },
       {
         name: "Shehan Ranasinghe",
         role: "Member",
@@ -157,12 +157,12 @@ const teamData = [
   {
     category: "Finance Committee",
     members: [
-      {
-        name: "Nimesh Dilhara",
-        role: "Member",
-        image: "members/Nimesh Rajakaruna.png",
-        linkedin: "http://www.linkedin.com/in/nimesh-rajakaruna-42b60b252",
-      },
+      // {
+      //   name: "Nimesh Dilhara",
+      //   role: "Member",
+      //   image: "members/Nimesh Rajakaruna.png",
+      //   linkedin: "http://www.linkedin.com/in/nimesh-rajakaruna-42b60b252",
+      // },
       {
         name: "Binidu Tishan",
         role: "Member",
@@ -175,12 +175,12 @@ const teamData = [
   {
     category: "Web and Technology Committee",
     members: [
-      {
-        name: "Lahiruni Malshika Amarasena",
-        role: "Member",
-        image: "members/Lahiruni Malshika.png",
-        linkedin: "https://www.linkedin.com/in/lahiruni-malshika-234242222/",
-      },
+      // {
+      //   name: "Lahiruni Malshika Amarasena",
+      //   role: "Member",
+      //   image: "members/Lahiruni Malshika.png",
+      //   linkedin: "https://www.linkedin.com/in/lahiruni-malshika-234242222/",
+      // },
       {
         name: "Adeepa Kularathna",
         role: "Member",
