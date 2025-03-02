@@ -9,10 +9,10 @@ export default function AboutPage() {
             {/* About Section - Split into Two Parts */}
             <div className="flex w-full min-h-[300px]">
                 {/* Left Darker Green Section */}
-                <div className="w-1/6 bg-green-400"></div>
+                <div className="w-1/6 bg-green-300"></div>
 
                 {/* Right Lighter Green Section */}
-                <div className="w-5/6 bg-green-100 flex flex-col items-center text-center px-6 md:px-12 py-16">
+                <div className="w-5/6 bg-green-200 flex flex-col items-center text-center px-6 md:px-12 py-16">
                     <h1 className="text-black text-5xl font-bold pt-12">About Us</h1>
 
                     <div className="mt-8 max-w-4xl">

@@ -16,7 +16,7 @@ export default function VolunteerPage() {
                     <h1 className="text-black text-4xl mt-4 md:mt-0 text-center md:text-left">
                         IEEE PES Volunteer of the Year
                     </h1>
-                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
+                    <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
                         Apply Now
                     </button>
                     <div className="text-center md:text-left">
