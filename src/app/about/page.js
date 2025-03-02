@@ -35,7 +35,7 @@ export default function AboutPage() {
                     and excellence for the benefit of humanity.
                 </p>
                 <p className="text-black text-lg mt-4 leading-relaxed">
-                    Learn more about IEEE in the
+                    Learn more about IEEE in the  &nbsp;
                     <a href="https://www.ieee.org/about/ieee-history.html" className="text-blue-600 font-semibold hover:underline">
                         History of IEEE.
                     </a>
