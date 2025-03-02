@@ -16,7 +16,7 @@ export default function Home() {
       {/* IEEE PES Content Section with dark theme */}
       <section className="py-10 px-6 md:px-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold text-[#71F45D]">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white/80">
             What is PES?
           </h2>
           <p className="mt-4 text-gray-400">
@@ -27,7 +27,7 @@ export default function Home() {
       
       {/* Video Section with dark theme */}
       <section className="py-10 px-6 md:px-20 text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-[#71F45D] mb-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-white/80 mb-6">
           IEEE PES Promotional Video
         </h2>
         <div className="max-w-4xl mx-auto border-4 border-[#71F45D] rounded-lg overflow-hidden shadow-lg">
