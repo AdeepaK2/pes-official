@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -15,16 +15,24 @@ export default function Navbar() {
     { name: "IEEE PES Volunteer of the Year!", href: "/volunteer_of_the_year" },
     { name: "About", href: "/about" },
     { name: "Committees", href: "/committees" },
-    { name: "News", href: "/news" },
     { name: "Projects", href: "/events" },
-    { name: "Contact Us", href: "/contact" }
+    { name: "Contact Us", href: "/contact" },
   ];
 
+  // Disable scrolling when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden"; // Prevent scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
+  }, [menuOpen]);
+
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-green-700 shadow-lg fixed w-full top-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" className="flex items-center">
           <Image
             src="/Logo.png"
             alt="Logo"
@@ -41,9 +49,9 @@ export default function Navbar() {
               <span
                 className={`${
                   pathname === item.href
-                    ? "text-[#71F45D] italic"
-                    : "text-gray-600"
-                } hover:text-[#71F45D] transition duration-300 cursor-pointer`}
+                    ? "text-white italic"
+                    : "text-white opacity-80"
+                } hover:opacity-100 transition duration-300 cursor-pointer`}
               >
                 {item.name}
               </span>
@@ -53,30 +61,48 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-900"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-white z-50"
+          onClick={() => setMenuOpen((prev) => !prev)}
         >
-          <Menu size={28} />
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white shadow-md">
+      {/* Mobile Menu - Slide In from Right */}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-green-800 shadow-lg transition-transform duration-300 ease-in-out z-50 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <button
+          className="absolute top-4 right-4 text-white z-50"
+          onClick={() => setMenuOpen(false)}
+        >
+          <X size={28} />
+        </button>
+        <div className="flex flex-col mt-16 space-y-4 px-6">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
+            <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
               <span
-                className={`block px-6 py-3 ${
+                className={`block py-3 ${
                   pathname === item.href
-                    ? "text-[#71F45D] italic"
-                    : "text-gray-600"
-                } hover:text-[#71F45D] transition duration-300 cursor-pointer`}
+                    ? "text-white italic"
+                    : "text-white opacity-80"
+                } hover:opacity-100 transition duration-300 cursor-pointer`}
               >
                 {item.name}
               </span>
             </Link>
           ))}
         </div>
+      </div>
+
+      {/* Click outside menu to close */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40"
+          onClick={() => setMenuOpen(false)}
+        />
       )}
     </nav>
   );

@@ -25,7 +25,7 @@ const TeamMemberCard = ({ name, role, image, linkedin }) => {
         href={linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-[#71F45D] text-2xl mt-3 inline-block hover:text-green-700 transition-colors"
+        className="text-blue-600 text-2xl mt-3 inline-block hover:text-blue-800 transition-colors"
       >
         <FaLinkedin />
       </a>

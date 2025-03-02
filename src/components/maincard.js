@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 const text = "IEEE Power & Energy Society Student Branch Chapter";
@@ -6,10 +7,10 @@ const subText = "University of Moratuwa";
 
 export default function HeroSection() {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-200 via-green-100 to-white text-center overflow-hidden px-4">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-center overflow-hidden px-4">
       {/* Cyber-Tech Rotating Rings */}
       <motion.div
-        className="absolute w-64 md:w-80 h-64 md:h-80 border-4 border-[#71F45D] rounded-full opacity-30"
+        className="absolute w-64 md:w-80 h-64 md:h-80 border-4 border-[#71F45D] rounded-full opacity-40"
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
       />
@@ -82,7 +83,7 @@ export default function HeroSection() {
 
       {/* Animated IEEE PES SBC UoM Text */}
       <motion.h1
-        className="text-lg md:text-3xl font-bold text-black z-10"
+        className="text-sm md:text-3xl font-bold text-white z-10 tracking-tight whitespace-nowrap"
         initial="hidden"
         animate="visible"
         variants={{
@@ -121,7 +122,7 @@ export default function HeroSection() {
 
       {/* Subtext Animation */}
       <motion.p
-        className="mt-2 text-sm md:text-lg text-gray-600 z-10"
+        className="mt-2 text-sm md:text-lg text-gray-400 z-10"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 1 }}
