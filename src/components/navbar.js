@@ -28,17 +28,6 @@ export default function Navbar() {
     }
   }, [menuOpen]);
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (!event.target.closest(".mobile-menu") && !event.target.closest(".menu-btn")) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, []);
-
   return (
     <nav className="bg-green-700 shadow-lg fixed w-full top-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
@@ -73,17 +62,21 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent event bubbling
+            setMenuOpen(!menuOpen);
+          }}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu - Fixed & No Scrolling */}
+      {/* Mobile Menu - Slide In from Right */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-green-800 shadow-lg transition-transform duration-300 ease-in-out mobile-menu ${
+        className={`fixed top-0 right-0 h-full w-64 bg-green-800 shadow-lg transition-transform duration-300 ease-in-out ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the menu
       >
         <button
           className="absolute top-4 right-4 text-white"
@@ -107,6 +100,14 @@ export default function Navbar() {
           ))}
         </div>
       </div>
+
+      {/* Close menu when clicking outside */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
     </nav>
   );
 }
